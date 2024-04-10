@@ -1,5 +1,9 @@
 package uvg.edu.gt;
 
+/**
+ * IMPORTANTE: Algunas funciones del presente código fueron recuperadas de las notas de clase
+ * @param <E> el tipo de elementos que se almacenarán en el heap, debe ser comparable.
+ */
 public interface PriorityQueue<E> {
     public E getFirst();
     // pre: !isEmpty()
