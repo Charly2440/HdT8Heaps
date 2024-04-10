@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/HdT8Heaps.iml" filepath="$PROJECT_DIR$/.idea/HdT8Heaps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hoja8HeapQueu.iml" filepath="$PROJECT_DIR$/Hoja8HeapQueu.iml" />
     </modules>
   </component>
 </project>
