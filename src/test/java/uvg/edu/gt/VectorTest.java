@@ -1,29 +1,37 @@
 package uvg.edu.gt;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Vector;
 
 public class VectorTest {
-    @Test
-    public void CreandoVector(){
-        Paciente P1 = new Paciente("Diego", "Ruptura", "B");
-        Paciente P2 = new Paciente("Daniel", "Dolor de cabeza", "C");
-        Paciente P3 = new Paciente("Perdo", "Ruptura", "B");
-        Paciente P4 = new Paciente("Juan", "Alergia", "C");
-        Paciente P5 = new Paciente("Pepe" ,"Gripe", "C");
-        Paciente P6 = new Paciente("Tiago","Asfixia", "A");
+    static VectorHeap<Paciente> CreandoVector(){
+        Paciente P1 = new Paciente("Juan Perez", "fractura de pierna", "C");
+        Paciente P2 = new Paciente("Maria Ramirez", "apendicitis", "A");
+        Paciente P3 = new Paciente("Lorenzo Toledo", "chikungunya", "E");
+        Paciente P4 = new Paciente("Carmen Sarmientos", "dolores de parto", "B");
 
-        Vector<Paciente> pacientes = new Vector<Paciente>();
+        Vector<Paciente> pacientes = new Vector<>();
         pacientes.add(P1);
         pacientes.add(P2);
         pacientes.add(P3);
         pacientes.add(P4);
-        pacientes.add(P5);
-        pacientes.add(P6);
-        System.out.println(pacientes);
-        VectorHeap heap = new VectorHeap(pacientes);
-        System.out.println(heap.getFirst());
+        VectorHeap<Paciente> heap = new VectorHeap<Paciente>(pacientes);
+        return heap;
     }
+
+    @Test
+    public void getFirstTest(){
+        VectorHeap<Paciente> heap = CreandoVector();
+        Assert.assertEquals(heap.getFirst().getNombre(), "Maria Ramirez");
+    }
+    @Test
+    public void removeTest(){
+        VectorHeap<Paciente> heap = CreandoVector();
+        heap.remove();
+        Assert.assertEquals(heap.getFirst().getNombre(), "Carmen Sarmientos");
+    }
+
 
 }

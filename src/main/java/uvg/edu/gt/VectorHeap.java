@@ -20,14 +20,14 @@ public class  VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
     // pre: 0 <= i < size
     // post: returns parent of node at location i
     {
-        return (i-1)/2;
+        return (int) Math.floor((i-1)/2);
     }
 
     protected static int left(int i)
     // pre: 0 <= i < size
     // post: returns index of left child of node at location i
     {
-        return 2*i+1;
+        return (2*i+1);
     }
 
     protected static int right(int i)
@@ -132,10 +132,30 @@ public class  VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
     // post: returns and removes minimum value from queue
     {
         E minVal = getFirst();
-        heap.set(0,heap.get(heap.size()-1));
-        heap.setSize(heap.size()-1);
-        if (heap.size() > 1) pushDownRoot(0);
+        heap.set(0, heap.get(heap.size() - 1));
+        heap.setSize(heap.size() - 1);
+        if (heap.size() > 1) {
+            pushDownRoot(0);
+        }
         return minVal;
+    }
+
+    public String toString(){
+        if (heap.isEmpty()) {
+            return "[]";
+        }
+
+        StringBuilder strBuilder = new StringBuilder();
+        strBuilder.append("[");
+        strBuilder.append(heap.get(0));
+
+        for (int i = 1; i < heap.size(); i++) {
+            strBuilder.append(", ");
+            strBuilder.append(heap.get(i).toString());
+        }
+
+        strBuilder.append("]");
+        return strBuilder.toString();
     }
 
 
