@@ -1,4 +1,4 @@
-# Sistema de Gestión de Pacientes
+# Sistema de Gestión de Pacientes (*Código en rama master*)
 
 Este es un sistema de gestión de pacientes que permite agregar nuevos pacientes, atender pacientes en función de su prioridad y cargar pacientes desde un archivo de texto.
 
